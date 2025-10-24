@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
+import { API_URL } from '../../../../config/api';
 export default function ModelViewer({ meshUrl }) {
   const mountRef = useRef();
   const [isRotating, setIsRotating] = useState(true);
@@ -11,7 +11,8 @@ export default function ModelViewer({ meshUrl }) {
 
   useEffect(() => {
     if (!meshUrl) return;
-    const fileUrl = `/meshy/${meshUrl.replace("https://assets.meshy.ai/", "")}`;
+    // const fileUrl = `/meshy/${meshUrl.replace("https://assets.meshy.ai/", "")}`;
+    const fileUrl =  `${API_URL}api/Models/proxy?url=${encodeURIComponent(meshUrl)}`;
 
     const width = mountRef.current.clientWidth || 800;
     const height = mountRef.current.clientHeight || 600;

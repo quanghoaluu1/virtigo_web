@@ -19,5 +19,6 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/meshy/, ''),
       },
     },
+    allowedHosts: ['rev-mines-sharon-ellen.trycloudflare.com'],
   },
 })
