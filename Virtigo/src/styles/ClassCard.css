@@ -1,0 +1,373 @@
+/* Enhanced ClassCard Styles */
+.class-card {
+  border-radius: 24px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 8px 40px rgba(251, 176, 64, 0.12) !important;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  background: #fff !important;
+  border: none !important;
+  overflow: hidden !important;
+  position: relative;
+}
+
+.class-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 16px 64px rgba(251, 176, 64, 0.20) !important;
+  transform: translateY(-12px) scale(1.02) !important;
+}
+
+.class-card-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #faf3eb 0%, #fffbe6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.class-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.class-card:hover .class-card-img {
+  transform: scale(1.08);
+}
+
+.class-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.class-card:hover .class-card-overlay {
+  opacity: 1;
+}
+
+.class-card-img-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.class-card-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+
+.class-card-badge {
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  border-radius: 20px !important;
+  padding: 6px 14px !important;
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15) !important;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.new-badge {
+  background: linear-gradient(135deg, #52c41a, #73d13d) !important;
+  color: #fff !important;
+}
+
+.popular-badge {
+  background: linear-gradient(135deg, #fa8c16, #ffc53d) !important;
+  color: #fff !important;
+}
+
+.discount-badge {
+  background: linear-gradient(135deg, #ff4d4f, #ff7875) !important;
+  color: #fff !important;
+}
+
+.badge-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.class-card-header {
+  margin-bottom: 18px;
+}
+
+.class-card-title {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #1a1a1a !important;
+  margin-bottom: 12px !important;
+  line-height: 1.4 !important;
+  min-height: 50px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.class-card:hover .class-card-title {
+  color: #00FFA1 !important;
+}
+
+.class-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.rating-icon {
+  color: #fadb14;
+  font-size: 1rem;
+}
+
+.rating-value {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.rating-count {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.class-card-lecturer-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lecturer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lecturer-avatar {
+  background: linear-gradient(135deg, #ffe9b0, #fbb040) !important;
+  color: #fff !important;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(251, 176, 64, 0.3);
+}
+
+.lecturer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lecturer-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.lecturer-title {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.class-duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8f9fa;
+  padding: 6px 12px;
+  border-radius: 16px;
+}
+
+.duration-icon {
+  color: #fbb040;
+  font-size: 0.9rem;
+}
+
+.duration-text {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.class-card-price-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.current-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fbb040;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.currency {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #999;
+}
+
+.original-price {
+  font-size: 0.9rem;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.status-tag {
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  border-radius: 16px !important;
+  padding: 4px 12px !important;
+  border: none !important;
+  letter-spacing: 0.5px;
+}
+
+.class-card-cta-btn {
+  background: linear-gradient(135deg, #fbb040 0%, #ffe9b0 100%) !important;
+  color: #1a1a1a !important;
+  border: none !important;
+  border-radius: 16px !important;
+  padding: 0 24px !important;
+  height: 48px !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 16px rgba(251, 176, 64, 0.3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.class-card-cta-btn:hover {
+  background: linear-gradient(135deg, #00FFA1 0%, #00FFA1 100%) !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 24px rgba(251, 176, 64, 0.4) !important;
+}
+
+.class-card-cta-btn:active {
+  transform: translateY(0) !important;
+}
+
+.class-card-motion {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .class-card {
+    width: 320px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .class-card {
+    width: 95vw !important;
+    max-width: 350px !important;
+    margin: 1rem auto !important;
+  }
+  
+  .class-card-lecturer-section {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  
+  .class-duration {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .class-card {
+    width: 90vw !important;
+    margin: 0.8rem auto !important;
+  }
+  
+  .class-card-badges {
+    top: 12px;
+    left: 12px;
+  }
+  
+  .class-card-badge {
+    font-size: 0.75rem !important;
+    padding: 4px 10px !important;
+  }
+  
+  .class-card-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .current-price {
+    font-size: 1.2rem;
+  }
+}
+
+/* Loading Animation */
+.class-card-motion {
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility */
+.class-card:focus-within {
+  outline: 2px solid #fbb040;
+  outline-offset: 2px;
+}
+
+.class-card-cta-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(251, 176, 64, 0.3);
+}

@@ -1,0 +1,106 @@
+.rich-text-editor-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.rich-text-editor-content:empty:before {
+  content: attr(data-placeholder);
+  color: #bfbfbf;
+  pointer-events: none;
+}
+
+.rich-text-editor-content h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.67em 0;
+}
+
+.rich-text-editor-content h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0.75em 0;
+}
+
+.rich-text-editor-content h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 0.83em 0;
+}
+
+.rich-text-editor-content h4 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 1.12em 0;
+}
+
+.rich-text-editor-content h5 {
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 1.5em 0;
+}
+
+.rich-text-editor-content h6 {
+  font-size: 0.75em;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
+
+.rich-text-editor-content p {
+  margin: 1em 0;
+}
+
+.rich-text-editor-content ul,
+.rich-text-editor-content ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.rich-text-editor-content li {
+  margin: 0.5em 0;
+}
+
+.rich-text-editor-content a {
+  color: #1890ff;
+  text-decoration: underline;
+}
+
+.rich-text-editor-content a:hover {
+  color: #40a9ff;
+}
+
+.rich-text-editor-content strong,
+.rich-text-editor-content b {
+  font-weight: bold;
+}
+
+.rich-text-editor-content em,
+.rich-text-editor-content i {
+  font-style: italic;
+}
+
+.rich-text-editor-content u {
+  text-decoration: underline;
+}
+
+.rich-text-editor-content code {
+  background-color: #f5f5f5;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+.rich-text-editor-content pre {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.rich-text-editor-content blockquote {
+  border-left: 4px solid #d9d9d9;
+  margin: 1em 0;
+  padding-left: 1em;
+  color: #595959;
+}
+

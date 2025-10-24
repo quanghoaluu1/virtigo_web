@@ -1,0 +1,170 @@
+.register-hero-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #c8e6c9 0%, #e8f5e9 100%);
+  gap: 0;
+}
+
+.register-illustration {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  min-width: 340px;
+  max-width: 420px;
+  padding: 0 32px 0 0;
+}
+
+.register-hero-title {
+  margin-top: 12px;
+  text-align: center;
+}
+.register-hero-title h1 {
+  color: #2e7d32;
+  font-size: 2.2rem;
+  font-family: 'Montserrat', 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.register-hero-title p {
+  color: #213547;
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.register-form {
+  background: #fff;
+  padding: 40px 32px 32px 32px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(46, 125, 50, 0.10);
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1.5px solid #a5d6a7;
+  z-index: 2;
+}
+
+.register-form h2 {
+  text-align: center;
+  margin-bottom: 8px;
+  color: #2e7d32;
+  font-family: 'Montserrat', 'Inter', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.register-btn {
+  background: linear-gradient(90deg, #66bb6a 0%, #81c784 100%) !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.15);
+  margin-top: 10px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.register-btn:hover, .register-btn:focus {
+  background: linear-gradient(90deg, #388e3c 0%, #4caf50 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25) !important;
+}
+
+.register-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #213547;
+}
+
+.register-footer a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.register-footer a:hover {
+  color: #66bb6a;
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .register-hero-container {
+    flex-direction: column;
+    padding: 32px 0;
+    gap: 0;
+  }
+  .register-illustration {
+    padding: 0;
+    margin-bottom: 16px;
+  }
+}
+.register-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .register-form {
+      width: 98vw;
+      min-width: unset;
+      padding: 24px 8px 16px 8px;
+    }
+    .register-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+  }
+  
+  .register-form {
+    width: 480px; /* hoặc 500px nếu muốn rộng hơn nữa */
+    max-width: 98vw;
+  
+  }
+  
+  /* Tăng kích thước input và label */
+  .register-form .ant-form-item-label > label {
+    font-size: 1.00rem;
+    font-weight: 500;
+  }
+  
+  .register-form .ant-input,
+  .register-form .ant-input-password,
+  .register-form .ant-input-affix-wrapper {
+    font-size: 1.00rem;
+    padding: 5px 8px;
+  }
+
+  .register-form .ant-select-selector,
+.register-form .ant-picker {
+  height: 48px !important;
+  font-size: 1.08rem;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.register-form .ant-select-single .ant-select-selector {
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+}
+
+.register-form .ant-select-selection-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+}
