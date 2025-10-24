@@ -381,7 +381,6 @@ const TestSchedule = ({ classId, subjectId }) => {
                       fontWeight: 500,
                       color: status.color,
                       display: 'inline-block',
-                      fontWeight: 'bold'
                     }}>
                       {status.text}
                     </span>
