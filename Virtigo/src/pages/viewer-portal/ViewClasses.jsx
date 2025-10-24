@@ -293,17 +293,19 @@ const ViewClasses = () => {
             </div>
           ) : (
             <>
-              <Row gutter={[24, 24]} justify="start">
+              <Row gutter={[48, 48]} justify="start">
                 {getCurrentPageItems().map(cls => (
                   <Col key={cls.classID} xs={24} sm={12} md={8} lg={8} xl={6}>
-                    <ClassCard
-                      imageURL={cls.imageURL}
-                      className={cls.className}
-                      lecturerName={cls.lecturerName}
-                      priceOfClass={cls.priceOfClass}
-                      status={cls.status}
-                      id={cls.classID}
-                    />
+                    <div style={{ padding: '8px' }}>
+                      <ClassCard
+                        imageURL={cls.imageURL}
+                        className={cls.className}
+                        lecturerName={cls.lecturerName}
+                        priceOfClass={cls.priceOfClass}
+                        status={cls.status}
+                        id={cls.classID}
+                      />
+                    </div>
                   </Col>
                 ))}
               </Row>
