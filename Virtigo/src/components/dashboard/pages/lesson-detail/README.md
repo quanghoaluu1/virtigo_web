@@ -119,7 +119,7 @@ A comprehensive rich-text editor for creating detailed lesson content with multi
 
 #### Dependencies
 - **react-quill**: Rich text editor
-- **react-beautiful-dnd**: Drag and drop functionality
+- **@hello-pangea/dnd**: Drag and drop functionality
 - **antd**: UI components
 - **axios**: API requests
 
