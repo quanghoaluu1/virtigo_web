@@ -45,27 +45,27 @@ const AboutPage = () => {
 
   const milestones = [
     {
-      year: '2020',
+      year: 'Tháng 6/2025',
       title: 'Thành lập Virtigo',
       description: 'Khởi tạo với tầm nhìn mang đến phương pháp học tập tiên tiến'
     },
     {
-      year: '2021',
+      year: 'Tháng 7/2025',
       title: 'Ra mắt nền tảng học tập',
       description: 'Triển khai hệ thống học tập trực tuyến đầu tiên với công nghệ 3D'
     },
     {
-      year: '2022',
+      year: 'Tháng 8/2025',
       title: 'Mở rộng quy mô',
       description: 'Đạt 1,000 học viên đầu tiên và mở rộng đội ngũ giảng viên'
     },
     {
-      year: '2023',
+      year: 'Tháng 9/2026',
       title: 'Đổi mới công nghệ',
       description: 'Tích hợp AI và VR vào chương trình giảng dạy'
     },
     {
-      year: '2024',
+      year: 'Tháng 10/2025',
       title: 'Phát triển toàn diện',
       description: 'Vượt mốc 4,000 học viên và mở rộng sang nhiều lĩnh vực mới'
     }

@@ -78,6 +78,13 @@ const LessonDetailPreview = () => {
     }
   };
 
+  const getYouTubeEmbedUrl = (url) => {
+    const regex =
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/;
+    const match = url.match(regex);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+  };
+
   const renderBlockIcon = (type) => {
     switch (type) {
       case 'text':
@@ -119,6 +126,10 @@ const LessonDetailPreview = () => {
         );
 
       case 'video':
+        const embedUrl = block.url && (block.url.includes('youtube.com') || block.url.includes('youtu.be')) 
+          ? getYouTubeEmbedUrl(block.url) 
+          : null;
+        
         return (
           <div key={index} style={blockStyle}>
             <Space style={{ marginBottom: 16 }}>
@@ -127,9 +138,9 @@ const LessonDetailPreview = () => {
             </Space>
             {block.url ? (
               <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-                {block.url.includes('youtube.com') || block.url.includes('youtu.be') ? (
+                {embedUrl ? (
                   <iframe
-                    src={block.url.replace('watch?v=', 'embed/')}
+                    src={embedUrl}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
