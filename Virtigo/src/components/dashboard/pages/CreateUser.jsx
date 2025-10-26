@@ -3,6 +3,7 @@ import { Form, Input, Button, Select, DatePicker, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import dayjs from 'dayjs';
+import { API_URL } from '../../../config/api';
 
 const { Option } = Select;
 
@@ -24,7 +25,7 @@ const CreateUser = () => {
       };
 
       // Gửi API
-      const response = await axios.post('https://9864a210fd0e.ngrok-free.app/api/Account/create-account', payload);
+      const response = await axios.post(`${API_URL}api/Account/create-account`, payload);
 
       if (response.status === 200 || response.status === 201) {
         message.success('Người dùng đã được tạo thành công!');

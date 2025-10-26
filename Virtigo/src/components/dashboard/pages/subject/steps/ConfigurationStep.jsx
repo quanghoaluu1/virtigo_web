@@ -81,7 +81,7 @@ const ConfigurationStep = ({ onGenerateClassSlots, onImportError, hasImportedCla
           icon={<DownloadOutlined />} // Thêm icon download
           onClick={async () => {
             try {
-              const response = await fetch('https://9864a210fd0e.ngrok-free.app/api/ImportExcel/schedule/import/guide-doc', {
+              const response = await fetch(`${API_URL}api/ImportExcel/schedule/import/guide-doc`, {
                 method: 'GET',
                 headers: {
                   'accept': '*/*',

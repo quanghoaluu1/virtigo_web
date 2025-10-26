@@ -149,7 +149,7 @@ const LecturerTestDetail = () => {
       // Gọi API chuyển điểm sang bảng điểm
       try {
         await axios.put(
-          `https://9864a210fd0e.ngrok-free.app/api/StudentMarks/update-marks-by-student-test/${data.studentTestID}`,
+          `${API_URL}api/StudentMarks/update-marks-by-student-test/${data.studentTestID}`,
           null,
           {
             headers: {
@@ -203,7 +203,7 @@ const LecturerTestDetail = () => {
       setBaremLoading(true);
       Promise.all(
         essayQuestionIDs.map(qid =>
-          axios.get(`https://9864a210fd0e.ngrok-free.app/WritingBarem/${qid}`)
+          axios.get(`${API_URL}WritingBarem/${qid}`)
             .then(res => ({ qid, data: res.data?.data || [] }))
             .catch(() => ({ qid, data: null }))
         )

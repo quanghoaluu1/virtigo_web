@@ -22,12 +22,12 @@ const [isPreviewVisible, setIsPreviewVisible] = useState(false);
   // Lấy min/max từ API khi type là MCQ
   useEffect(() => {
     if (type === 'MCQ') {
-      fetch('https://9864a210fd0e.ngrok-free.app/api/SystemConfig/get-config-by-key/min_mcq_option_per_question')
+      fetch(`${API_URL}api/SystemConfig/get-config-by-key/min_mcq_option_per_question`)
         .then(res => res.json())
         .then(data => {
           if (data?.data?.value) setMinOptions(Number(data.data.value));
         });
-      fetch('https://9864a210fd0e.ngrok-free.app/api/SystemConfig/get-config-by-key/max_mcq_option_per_question')
+      fetch(`${API_URL}api/SystemConfig/get-config-by-key/max_mcq_option_per_question`)
         .then(res => res.json())
         .then(data => {
           if (data?.data?.value) setMaxOptions(Number(data.data.value));

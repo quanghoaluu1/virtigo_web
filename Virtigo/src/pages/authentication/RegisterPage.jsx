@@ -321,6 +321,17 @@ const RegisterPage = () => {
             >
               Xác thực & Đăng ký
             </Button>
+            <div
+      style={{
+        marginTop: 12,
+        textAlign: 'center',
+        color: '#757575',
+        fontSize: 14,
+        fontStyle: 'italic'
+      }}
+    >
+      Nếu không thấy email, hãy kiểm tra thư mục <span style={{ color: '#2e7d32', fontWeight: 600 }}>Spam</span>.
+    </div>
           </Modal>
         )}
         {/* Không hiển thị lỗi chung khi lỗi email đã được sử dụng, lỗi sẽ hiển thị ở ô email */}
