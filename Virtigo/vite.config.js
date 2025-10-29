@@ -21,4 +21,5 @@ export default defineConfig({
     },
     allowedHosts: ['rev-mines-sharon-ellen.trycloudflare.com'],
   },
+  assetsInclude: ['**/*.glb', '**/*.gltf'],
 })
