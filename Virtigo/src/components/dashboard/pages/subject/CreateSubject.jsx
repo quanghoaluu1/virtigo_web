@@ -363,6 +363,8 @@ const CreateSubject = () => {
       durationMinutes: slot.durationMinutes,
       resources: slot.resources,
     });
+    console.log('slot.resources:', slot.resources);
+console.log('lessonDetails:', lessonDetails.map(d => d.lessonDetailId));
   };
 
   const handleUpdateSlot = () => {

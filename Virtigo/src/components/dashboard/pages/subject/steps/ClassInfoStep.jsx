@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Form, InputNumber, Input, Card, Divider, Table, Button, Space } from 'antd';
+import { Form, InputNumber, Input, Card, Divider, Table, Button, Space, Select } from 'antd';
 import Notification from '../../../../common/Notification';
 import axios from 'axios';
 import { API_URL, endpoints } from '../../../../../config/api';
@@ -19,6 +19,9 @@ const ClassInfoStep = ({ classSlots, editingSlot, setEditingSlot, handleEditSlot
   const [maxWeeks, setMaxWeeks] = useState(null);
   const [maxSlotsPerWeek, setMaxSlotsPerWeek] = useState(null);
   const [maxTotalMinutes, setMaxTotalMinutes] = useState(null);
+
+  // Lesson details state
+  const [lessonDetails, setLessonDetails] = useState([]);
 
   useEffect(() => {
     const fetchConfig = async () => {
@@ -41,6 +44,24 @@ const ClassInfoStep = ({ classSlots, editingSlot, setEditingSlot, handleEditSlot
       }
     };
     fetchConfig();
+  }, []);
+
+  // Fetch lesson details
+  useEffect(() => {
+    const fetchLessonDetails = async () => {
+      try {
+        const response = await axios.get(`${API_URL}api/LessonDetails`);
+        setLessonDetails(response.data.data || response.data || []);
+      } catch (err) {
+        setNotification({
+          visible: true,
+          type: 'error',
+          message: 'Không thể tải danh sách tài nguyên',
+          description: err?.message || '',
+        });
+      }
+    };
+    fetchLessonDetails();
   }, []);
 
   // Tính rowSpan cho cột "Tuần"
@@ -210,16 +231,35 @@ const ClassInfoStep = ({ classSlots, editingSlot, setEditingSlot, handleEditSlot
       dataIndex: 'resources',
       key: 'resources',
       ellipsis: true,
-      render: (text, record) =>
-        editingSlot?.slot === record.slot ? (
+      render: (text, record) => {
+        // Find the lesson detail title by ID
+        const selectedLessonDetail = lessonDetails.find(detail => detail.lessonDetailID === text);
+        const displayText = selectedLessonDetail ? selectedLessonDetail.title : text;
+        console.log('selectedLessonDetail:', selectedLessonDetail);
+        console.log('render Select:', text, lessonDetails.map(d => d.lessonDetailID));
+        return editingSlot?.slot === record.slot ? (
           <Form form={editForm} component={false}>
-            <Form.Item name="resources" className="m-0">
-              <Input />
+            <Form.Item key={editingSlot?.slot} name="resources" className="m-0" initialValue={text}>
+              <Select
+                placeholder="Chọn tài nguyên"
+                showSearch
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
+                }
+                options={lessonDetails.map(detail => ({
+                  value: detail.lessonDetailID,
+                  label: detail.title,
+                }))}
+              />
             </Form.Item>
           </Form>
+          
         ) : (
-          text
-        ),
+          displayText
+        );
+        
+      },
     },
     {
       title: 'Thao tác',
