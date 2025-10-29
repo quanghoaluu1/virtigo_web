@@ -5,6 +5,7 @@ import {
   LinkedinOutlined,
   TwitterOutlined,
   MailOutlined,
+  TikTokOutlined,
 } from '@ant-design/icons';
 import axios from 'axios';
 import Logo from '../../assets/virtigo-text.svg';
@@ -73,9 +74,8 @@ const Footer = () => {
               {contactInfo.address && <p><b>Địa chỉ:</b> {contactInfo.address}</p>}
             </div>
             <div className="footer__social-icons">
-              <a href="#"><FacebookFilled /></a>
-              <a href="#"><LinkedinOutlined /></a>
-              <a href="#"><TwitterOutlined /></a>
+              <a href="https://www.facebook.com/virtigo.education" target="_blank" rel="noopener noreferrer"><FacebookFilled /></a>
+              <a href="https://www.tiktok.com/@virtigo.education" target="_blank" rel="noopener noreferrer"><TikTokOutlined /></a>
             </div>
           </Col>
         </Row>
