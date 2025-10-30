@@ -13,7 +13,7 @@ const EnrollClass = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [selectedStatus, setSelectedStatus] = useState('Ongoing');
+  const [selectedStatus, setSelectedStatus] = useState('All');
   const [selectedLecturer, setSelectedLecturer] = useState('All');
 
   useEffect(() => {
