@@ -20,7 +20,7 @@ const LessonDetailPage = (props) => {
   try {
     const user = JSON.parse(localStorage.getItem('user'));
     userRole = user && user.role;
-  } catch (e) {
+  } catch {
     userRole = null;
   }
 
@@ -120,10 +120,29 @@ const LessonDetailPage = (props) => {
             )}
             {lesson.resources && (
               <div className="mb-16">
-                <Tag color="gold" icon={<LinkOutlined />} style={{ fontSize: 15, padding: '6px 12px', fontWeight: 500 }}>
-                  <AntLink href={lesson.resources} target="_blank" style={{ color: '#b48800' }}>
+                <Tag color="gold" icon={<LinkOutlined />} style={{ fontSize: 15, padding: '6px 12px', fontWeight: 500, cursor: 'pointer' }}
+                  onClick={() => {
+                    const isUrl = /^https?:\/\//.test(lesson.resources);
+                    if (isUrl) {
+                      // If resources is a URL, open it in new tab
+                      window.open(lesson.resources, '_blank');
+                    } else {
+                      // If resources is a lesson detail ID, navigate to appropriate preview page
+                      if (userRole === 'Manager') {
+                        navigate(`/dashboard/lesson-management/preview/${lesson.resources}`);
+                      } else if (userRole === 'Lecture') {
+                        navigate(`/lecturer/lesson-preview/${lesson.resources}`);
+                      } else if (userRole === 'Student') {
+                        navigate(`/student/lesson-preview/${lesson.resources}`);
+                      } else {
+                        navigate(`/lesson-preview/${lesson.resources}`);
+                      }
+                    }
+                  }}
+                >
+                  <span style={{ color: '#b48800' }}>
                     Tài nguyên bài học
-                  </AntLink>
+                  </span>
                 </Tag>
               </div>
             )}
