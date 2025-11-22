@@ -52,11 +52,11 @@ const Sidebar = () => {
       icon: <DashboardOutlined />,
       label: 'Bảng điều khiển',
     },
-    {
-      key: '/dashboard/users',
-      icon: <TeamOutlined />, // icon người dùng nhóm
-      label: 'Quản lí tài khoản',
-    },
+    // {
+    //   key: '/dashboard/users',
+    //   icon: <TeamOutlined />, // icon người dùng nhóm
+    //   label: 'Quản lí tài khoản',
+    // },
     {
       key: '/dashboard/subject',
       icon: <BookOutlined />, // icon sách
